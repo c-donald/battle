@@ -14,7 +14,6 @@ class Battle < Sinatra::Base
    post '/names' do
       $player_one = Player.new(params[:player_one])
       $player_two = Player.new(params[:player_two])
-
       erb :play
    end
 
