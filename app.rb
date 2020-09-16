@@ -20,8 +20,6 @@ class Battle < Sinatra::Base
 
    get '/confirmation' do 
       erb :attacked
-      
-      #"You've attacked Player 2!"
    end 
 
 end
