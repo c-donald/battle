@@ -10,5 +10,6 @@ group :development, :test do
     gem "shotgun"
     gem 'capybara'
     gem 'selenium-webdriver'
+    gem 'rack'
 end 
 # gem "rails"
