@@ -26,4 +26,11 @@ feature 'attack p2' do
   click_on('attack')
   expect(page).to have_content "You've attacked Player 2!"
   end
+
+  scenario 'takes away 10hp from p2' do
+    sign_in_and_play
+    click_on('attack')
+    expect(page).to have_content "Player two HP = 90"
+  end
+
 end 

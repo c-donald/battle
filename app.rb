@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/player.rb'
 
 class Battle < Sinatra::Base
 
@@ -11,13 +12,16 @@ class Battle < Sinatra::Base
    end
 
    post '/names' do
-      @player_one = params[:player_one]
-      @player_two = params[:player_two]
+      $player_one = Player.new(params[:player_one])
+      $player_two = Player.new(params[:player_two])
+
       erb :play
    end
 
    get '/confirmation' do 
-      "You've attacked Player 2!"
+      erb :attacked
+      
+      #"You've attacked Player 2!"
    end 
 
 end
