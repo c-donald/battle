@@ -16,4 +16,8 @@ class Battle < Sinatra::Base
       erb :play
    end
 
+   get '/confirmation' do 
+      "You've attacked Player 2!"
+   end 
+
 end

@@ -7,10 +7,23 @@ end
 
 feature 'players submit names in a form' do
   scenario 'players enter names in a form and then see their names on screen' do
-    visit '/names'
-    fill_in('player_one', with: 'Sam')
-    fill_in('player_two', with: 'Courtenay')
-    click_on('Submit')
+    sign_in_and_play
     expect(page).to have_content "Sam vs. Courtenay"
   end
+
 end
+
+feature "can view player 2's hit points" do
+  scenario 'view hit points' do 
+    sign_in_and_play
+    expect(page).to have_content "Player 2 HP: 100"
+  end 
+end
+
+feature 'attack p2' do 
+  scenario 'can attack p2' do
+  sign_in_and_play
+  click_on('attack')
+  expect(page).to have_content "You've attacked Player 2!"
+  end
+end 
