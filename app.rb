@@ -14,11 +14,20 @@ class Battle < Sinatra::Base
 
    post '/names' do
       $game = Game.new(params[:player_one], params[:player_two])
+      redirect '/battle'
+   end
+
+   get '/battle' do
+      $game.switch_turns
       erb :play
    end
 
-   get '/confirmation' do 
-      erb :attacked
-   end 
+   get '/confirmation_two' do 
+      erb :attacked_two
+   end
+
+   get '/confirmation_one' do
+      erb :attacked_one
+   end
 
 end
