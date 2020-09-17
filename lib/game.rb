@@ -19,8 +19,5 @@ class Game
     @current_turn == @player_one.name ? @current_turn = @player_two.name : @current_turn = @player_one.name
   end
 
-private
-  def opponent_of(the_player)
-    @players.select { |player| player != the_player }.first
-  end
+
 end
