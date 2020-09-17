@@ -11,8 +11,4 @@ class Player
     @hp = hp
   end
 
-  def attack(other_player)
-    other_player.hp -= ATTACK_VALUE
-  end
-
 end
