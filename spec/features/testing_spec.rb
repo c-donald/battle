@@ -13,6 +13,14 @@ feature 'players submit names in a form' do
 
 end
 
+feature "can view player 1's hit points" do 
+  scenario 'view hit points' do 
+    sign_in_and_play
+    expect(page).to have_content "Player 1 HP: 100"
+  end
+end
+
+
 feature "can view player 2's hit points" do
   scenario 'view hit points' do 
     sign_in_and_play
@@ -32,5 +40,7 @@ feature 'attack p2' do
     click_on('attack')
     expect(page).to have_content "Player two HP = 90"
   end
+
+ feature 'switch turns'
 
 end 
