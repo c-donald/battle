@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player.rb'
+require_relative './lib/game.rb'
 
 class Battle < Sinatra::Base
 
@@ -12,7 +13,6 @@ class Battle < Sinatra::Base
    end
 
    post '/names' do
-      $player_two = Player.new(params[:player_two])
       $game = Game.new(params[:player_one], params[:player_two])
       erb :play
    end

@@ -2,6 +2,7 @@ require 'game'
 require 'player'
 
 describe Game do
+
   it 'responds to attack' do
     expect(subject).to respond_to(:attack)
   end
