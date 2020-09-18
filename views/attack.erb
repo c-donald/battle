@@ -1,7 +1,7 @@
-<h1> You've attacked <%= @game.other_player.name %>! </h1>
-<% @game.attack(@game.other_player) %>
-<p> <%=@game.other_player.name %> HP: <%= @game.other_player.hp %></p>
+<h1> You've attacked <%= $game.other_player.name %>! </h1>
+<% $game.attack($game.other_player) %>
+<p> <%=$game.other_player.name %> HP: <%= $game.other_player.hp %></p>
 
-<% @game.switch_turns%> 
-<% @game.other %>
+<% $game.switch_turns%> 
+<% $game.other %>
 <a href="/battle">Back to the battle!</a>
