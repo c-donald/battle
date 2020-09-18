@@ -4,6 +4,10 @@ require_relative './lib/game.rb'
 
 class Battle < Sinatra::Base
 
+   before do
+      @game = Game.instance
+   end
+
    get '/' do 
      redirect '/names'
    end 
@@ -13,12 +17,14 @@ class Battle < Sinatra::Base
    end
 
    post '/names' do
-      $game = Game.new(params[:player_one], params[:player_two])
+      player_1 = Player.new(params[:player_one])
+      player_2 = Player.new(params[:player_two])
+      @game = Game.create(player_1, player_2)
       redirect '/battle'
    end
 
    get '/battle' do
-      if $game.knockout? 
+      if @game.knockout? 
         redirect '/knockout'
       else
         erb :play

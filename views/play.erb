@@ -1,10 +1,10 @@
 <title>Player names (post)</title>
 <h1>F I G H T </h1>
-<h2>Current turn: <%= $game.current_turn.name %></h2>
+<h2>Current turn: <%= @game.current_turn.name %></h2>
 
-<%= $game.player_one.name %> vs. <%= $game.player_two.name %>
-<p> Player one: <%= $game.player_one.name %> HP: <%= $game.player_one.hp %> </p>
-<p> Player two: <%= $game.player_two.name %> HP: <%= $game.player_two.hp %> </p>
+<%= @game.player_one.name %> vs. <%= @game.player_two.name %>
+<p> Player one: <%= @game.player_one.name %> HP: <%= @game.player_one.hp %> </p>
+<p> Player two: <%= @game.player_two.name %> HP: <%= @game.player_two.hp %> </p>
 
 <p><a href='/attack'>Attack!</a></p>
 <p><a href='/ko'>Instant KO!</a></p>
