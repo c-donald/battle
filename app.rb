@@ -5,7 +5,7 @@ require_relative './lib/game.rb'
 class Battle < Sinatra::Base
 
    get '/' do 
-     redirect '/names'
+    'Testing infrastructure working!'
    end 
 
    get '/names' do
@@ -18,23 +18,16 @@ class Battle < Sinatra::Base
    end
 
    get '/battle' do
-      if $game.knockout? 
-        redirect '/knockout'
-      else
-        erb :play
-      end
+      $game.switch_turns
+      erb :play
    end
 
-   get '/attack' do
-      erb :attack
+   get '/confirmation_two' do 
+      erb :attacked_two
    end
 
-   get '/knockout' do
-     erb :knockout   
-   end
-
-   get '/ko' do
-     erb :instant_ko   
+   get '/confirmation_one' do
+      erb :attacked_one
    end
 
 end
