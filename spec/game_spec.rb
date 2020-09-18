@@ -13,13 +13,4 @@ describe Game do
       expect { subject.attack(defender) }.to change { defender.hp }.from(Player::HP).to(Player::HP - Player::ATTACK_VALUE)
     end
   end
-
-  describe '#switch_turns' do
-    it 'switches the value of @current_turn' do
-      game = Game.new("1", "2")
-      game.switch_turns
-      expect(game.current_turn).to eq "2"
-    end
-  end
-
 end
